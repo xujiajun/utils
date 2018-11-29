@@ -1,4 +1,4 @@
-package fnv
+package fnv2
 
 import "hash/fnv"
 
