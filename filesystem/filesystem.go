@@ -1,7 +1,6 @@
 package filesystem
 
 import (
-	"fmt"
 	"io"
 	"io/ioutil"
 	"os"
@@ -41,11 +40,11 @@ func CopyDir(src string, dst string) error {
 
 		if fd.IsDir() {
 			if err = CopyDir(srcfp, dstfp); err != nil {
-				fmt.Println(err)
+				return err
 			}
 		} else {
 			if err = CopyFile(srcfp, dstfp); err != nil {
-				fmt.Println(err)
+				return err
 			}
 		}
 	}
